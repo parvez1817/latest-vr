@@ -77,14 +77,14 @@ const translations = {
     // Map Section
     'map.title': 'Discover India,',
     'map.subtitle': 'One State at a Time',
-    'map.description': 'Click on any state to experience its unique heritage — virtually walk through temples of Tamil Nadu or witness Rajasthan\'s vibrant festivals.',
+    'map.description': 'Click on any state to experience its unique heritage — virtually walk through temples of India or witness India\'s vibrant festivals.',
     'map.exploreVR': 'Explore in VR',
     'map.viewComplete': 'View Complete Map',
     'map.ready': 'Ready to explore all 28 states and 8 union territories?',
     
     // Pricing Section
     'pricing.title': 'Choose Your Journey Plan',
-    'pricing.description': 'Access Tamil Nadu\'s heritage in VR – learn, explore, and experience like never before.',
+    'pricing.description': 'Access India\'s heritage in VR – learn, explore, and experience like never before.',
     'pricing.individual': 'Individual Plan',
     'pricing.family': 'Family Plan',
     'pricing.institutional': 'Institutional Plan',
