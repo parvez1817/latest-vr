@@ -1,0 +1,208 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* VR Indian Cultural Platform Design System
+All colors MUST be HSL for proper theming
+*/
+
+@layer base {
+  :root {
+    /* Base colors */
+    --background: 20 15% 8%;
+    --foreground: 35 25% 95%;
+
+    /* Card colors */
+    --card: 20 12% 12%;
+    --card-foreground: 35 25% 95%;
+
+    /* Popover colors */
+    --popover: 20 12% 12%;
+    --popover-foreground: 35 25% 95%;
+
+    /* Indian Cultural Palette */
+    --saffron: 30 100% 60%;
+    --saffron-light: 35 100% 70%;
+    --indigo: 260 100% 35%;
+    --indigo-light: 260 80% 50%;
+    --peacock: 180 100% 18%;
+    --peacock-light: 180 80% 25%;
+    --temple-stone: 25 15% 45%;
+    --maroon: 0 65% 25%;
+    --gold: 45 100% 50%;
+
+    /* Primary theme colors */
+    --primary: 30 100% 60%;
+    --primary-foreground: 20 15% 8%;
+
+    /* Secondary colors */
+    --secondary: 260 100% 35%;
+    --secondary-foreground: 35 25% 95%;
+
+    /* Muted colors */
+    --muted: 20 8% 20%;
+    --muted-foreground: 35 15% 65%;
+
+    /* Accent colors */
+    --accent: 180 100% 18%;
+    --accent-foreground: 35 25% 95%;
+
+    /* Status colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 35 25% 95%;
+
+    /* Border and input */
+    --border: 20 8% 25%;
+    --input: 20 8% 20%;
+    --ring: 30 100% 60%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--saffron)) 0%, hsl(var(--indigo)) 100%);
+    --gradient-cultural: linear-gradient(45deg, hsl(var(--peacock)) 0%, hsl(var(--saffron)) 50%, hsl(var(--maroon)) 100%);
+    --gradient-section: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(20 12% 10%) 100%);
+    
+    /* Shadows with cultural colors */
+    --shadow-saffron: 0 20px 60px -20px hsl(var(--saffron) / 0.3);
+    --shadow-cultural: 0 30px 80px -30px hsl(var(--indigo) / 0.4);
+    
+    /* Border radius */
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* Smooth scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Cultural design elements */
+  .mandala-pattern {
+    background-image: radial-gradient(circle at center, hsl(var(--saffron) / 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  .cultural-gradient {
+    background: var(--gradient-cultural);
+  }
+
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+
+  /* Animation keyframes */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: var(--shadow-saffron); }
+    50% { box-shadow: var(--shadow-cultural); }
+  }
+
+  @keyframes slide-in-up {
+    from { 
+      opacity: 0; 
+      transform: translateY(30px); 
+    }
+    to { 
+      opacity: 1; 
+      transform: translateY(0); 
+    }
+  }
+
+  /* Utility classes */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 4s ease-in-out infinite;
+  }
+
+  .animate-slide-in-up {
+    animation: slide-in-up 0.8s ease-out;
+  }
+
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slide-in-up 0.8s ease-out forwards;
+  }
+
+  /* Typography styles */
+  .heading-serif {
+    font-family: 'Playfair Display', serif;
+  }
+
+  /* Cultural motif backgrounds */
+  .kolam-bg {
+    background-image: 
+      radial-gradient(circle at 25% 25%, hsl(var(--gold) / 0.1) 2px, transparent 2px),
+      radial-gradient(circle at 75% 75%, hsl(var(--saffron) / 0.1) 2px, transparent 2px);
+    background-size: 40px 40px;
+  }
+}
